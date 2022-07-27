@@ -29,10 +29,21 @@ namespace ConsoleUI
         private static void ProductTest()
         {
             ProductManager productManager = new ProductManager(new EfProductDal());
-            foreach (var p in productManager.GetProducDetails())
+
+            var result = productManager.GetProducDetails();
+
+            if (result.Success)
             {
-                Console.WriteLine("{0}\t {1} \t {2} \t {3}",p.ProductId, p.ProductName, p.CategoryName, p.UnitsInStock);
+                foreach (var p in productManager.GetProducDetails().Data)
+                {
+                    Console.WriteLine("{0}\t {1} \t {2} \t {3}", p.ProductId, p.ProductName, p.CategoryName, p.UnitsInStock);
+                }
             }
+            else
+            {
+                Console.WriteLine(result.Message);
+            }
+            
         }
     }
 }
