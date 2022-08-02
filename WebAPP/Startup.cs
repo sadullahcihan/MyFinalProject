@@ -37,8 +37,8 @@ namespace WebAPP
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPP", Version = "v1" });
             });
-            services.AddSingleton<IProductService,ProductManager>(); //sends reference to controller(no data)
-            services.AddSingleton<IProductDal, EfProductDal>(); //dependency resolution
+            //services.AddSingleton<IProductService,ProductManager>(); //sends reference to controller(no data)
+            //services.AddSingleton<IProductDal, EfProductDal>(); //dependency resolution
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

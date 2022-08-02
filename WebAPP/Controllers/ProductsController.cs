@@ -49,7 +49,7 @@ namespace WebAPP.Controllers
         public IActionResult Add(Product product)
         {
             var result = _productService.Add(product);
-            if (result.Success)
+            if (result.Success) 
             {
                 return Ok(result);
             }
